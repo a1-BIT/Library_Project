@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Book Shelf</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-primary text-white">
+        <a class="navbar-brand nav"><i>"A room without books is like a body without a soul"</i></a>
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success border-white my-2 my-sm-0 text-white" type="submit">Search</button>
+        </form>
+    </nav>
+    <div id="msg"> </div>
+    <div class="container my-2">
+        <h3>Book Shelf</h3>
+        <hr>
+        <form id="formSubmit">
+            <div class="form-group row">
+                <label for="Book" class="col-sm-2 col-form-label">Book</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="bName" placeholder="Book Name">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="Author" class="col-sm-2 col-form-label">Author</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="aName" placeholder="Author">
+                </div>
+            </div>
+            <fieldset class="form-group">
+                <div class="row">
+                    <legend class="col-form-label col-sm-2 pt-0">Type</legend>
+                    <div class="col-sm-10">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="booktype" id="si-fi"
+                                value="si-fi">
+                            <label class="form-check-label" for="inlineRadio1">Science Fiction</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="booktype" id="religious"
+                                value="Religious">
+                            <label class="form-check-label" for="Religious">Religious</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="booktype" id="tech"
+                                value="Technology">
+                            <label class="form-check-label" for="Technology">Technology</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="booktype" id="horror"
+                                value="Horror">
+                            <label class="form-check-label" for="Horror">Horror</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="booktype" id="romance"
+                                value="Romance">
+                            <label class="form-check-label" for="Romance">Romance/Erotica</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="booktype" id="crime"
+                                value="Crime">
+                            <label class="form-check-label" for="Crime">Crime/Mystery</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="booktype" id="action"
+                                value="Other">
+                            <label class="form-check-label" for="Action and Adventure">Action and Adventure</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="booktype" id="history"
+                                value="Other">
+                            <label class="form-check-label" for="Historical Fiction">Historical Fiction</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="booktype" id="classics"
+                                value="Other">
+                            <label class="form-check-label" for="Classics">Classics</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="booktype" id="autoBio"
+                                value="Other">
+                            <label class="form-check-label" for="Biographies and Autobiographies">Biographies and Autobiographies</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="booktype" id="cookBooks"
+                                value="Other">
+                            <label class="form-check-label" for="Cookbooks">Cookbooks</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="booktype" id="poetry"
+                                value="Other">
+                            <label class="form-check-label" for="Poetry">Poetry</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="booktype" id="other"
+                                value="Other">
+                            <label class="form-check-label" for="other">Other</label>
+                        </div>
+                    </div>
+            </fieldset>
+            <div class="form-group row">
+                <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Put book on the shelf</button>
+                </div>
+            </div>
+        </form>
+        <div id="table">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Author</th>
+                        <th scope="col">Genre</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="JS/app.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
